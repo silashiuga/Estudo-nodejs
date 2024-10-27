@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Índice</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <button onClick="get()">Get</button>
+    <button onClick="post()">Post</button>
+    <button onClick="put()">Put</button>
+    <button onClick="del()">Delete</button>
+
+    <script>
+      const url = "http://localhost:3000/teste";
+
+      function get(){
+        fetch(url, {
+          method:"get"
+        }).then(resp=> {
+          console.log(resp)
+        }).catch(err=>{
+          console.log(err)
+        })
+      }
+      function post(){
+        fetch(url, {
+          method:"post"
+        }).then(resp=> {
+          
+          resp.text().then(info=>{console.log(info)})
+        }).catch(err=>{
+          console.log(err)
+        })
+      }
+      function put(){
+        fetch(url, {
+          method:"put"
+        }).then(resp=> {
+          console.log(resp)
+        }).catch(err=>{
+          console.log(err)
+        })
+      }
+      function del(){
+        fetch(url, {
+          method:"delete"
+        }).then(resp=> {
+          console.log(resp)
+        }).catch(err=>{
+          console.log(err)
+        })
+      }
+    </script>
+  </body>
+</html>
